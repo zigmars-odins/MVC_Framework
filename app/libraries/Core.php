@@ -9,7 +9,7 @@ class Core
  public function __construct()
  {
   $url = $this->getUrl();
-// Look in 'controllers' for first value
+  // Look in 'controllers' for first value
   if (file_exists('../app/controllers/' . ucwords($url[0]) . '.php')) {
    $this->currentController = ucwords($url[0]);
    unset($url[0]);
@@ -41,7 +41,7 @@ class Core
 
    // Allows you to filter variables as string/number
    $url = filter_var($url, FILTER_SANITIZE_URL);
-   
+
    // Breaking it into array
    $url = explode('/', $url);
    return $url;
